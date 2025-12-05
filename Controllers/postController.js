@@ -33,7 +33,7 @@ export const createPost = async (req, res) => {
 export const getPost = async (req, res) => {
   try {
     const posts = await Post.find({ approved: true }).populate("user", "name");
-    res.status(200).json({ message: "Posts fetched successfully", posts });
+    res.status(200).json({ message: "Posts fetched successfully",posts });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
