@@ -34,8 +34,8 @@ dotenv.config();
    tls: {
      rejectUnauthorized: false
    },
-    port: 587,
-    secure: false,
+    port: 465,
+    secure: true,
     logger: true,
     debug: true,
     auth: {
