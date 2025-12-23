@@ -30,9 +30,10 @@ dotenv.config();
 
  const sendMail = async (to, subject, text) => {
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
     host: 'smtp.gmail.com',
-   requireTLS: true,
+   tls: {
+     rejectUnauthorized: false
+   },
     port: 587,
     secure: false,
     logger: true,
