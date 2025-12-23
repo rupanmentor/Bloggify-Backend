@@ -2,7 +2,7 @@ import User from "../Models/userSchema.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import sendEmail from "../Utils/mailer.js";
+import sendMail from "../Utils/mailer.js";
 
 dotenv.config();
 
@@ -75,7 +75,7 @@ export const forgotPassword = async (req, res) => {
     });
 
     //send email
-    await sendEmail(
+    await sendMail(
       user.email,
       "Password Reset link",
       `You are receiving this email because you have requested to reset your password.
